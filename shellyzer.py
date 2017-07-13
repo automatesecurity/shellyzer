@@ -2,6 +2,20 @@
 
 import sys, os, re, time
 
+class Logger(object):
+	def __init__(self):
+		self.terminal = sys.stdout
+		self.log = open("shellyzer.log", "a")
+
+	def write(self, message):
+		self.terminal.write(message)
+		self.log.write(message)
+
+	def flush(self):
+		pass
+		
+sys.stdout = Logger()
+
 def checkStrings(filepath):
 	globalcount = 0
 	lintList = ['eval', 'exec']
