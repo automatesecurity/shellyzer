@@ -3,11 +3,17 @@ A python script to conduct static analysis of shell scripts that can be used as 
 
 
 
+## Assumptions
+
+Shellyzer assumes you're running python at `#!/bin/env python` if you env is different, you will have to customize this prior to usage.
+
+
+
 ## Usage
 
 To use Shellyzer, simply call it from the command-line.
 
-`./shellyzer`
+`./shellyzer.py`
 
 It will prompt you for the full path to your shell script(s) you would like analyzed.  
 
