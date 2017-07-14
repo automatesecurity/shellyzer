@@ -17,7 +17,67 @@ To use Shellyzer, simply call it from the command-line.
 
 It will prompt you for the full path to your shell script(s) you would like analyzed.  
 
+To access the docstrings, run an interactive session like the example below:
+```python
+Python 2.7.13 (default, Dec 18 2016, 07:03:39) 
+[GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import shellyzer
+>>> help(shellyzer)
+Help on module shellyzer:
 
+NAME
+    shellyzer
+
+FILE
+    /Users/dwood/projects/shellyzer/shellyzer.py
+
+CLASSES
+    __builtin__.object
+        Logger
+    
+    class Logger(__builtin__.object)
+     |  Ensure the logger is setup properly
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self)
+     |  
+     |  flush(self)
+     |  
+     |  write(self, message)
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |  
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+FUNCTIONS
+    checkStrings(filepath)
+        Compare lint signatures against lines of code
+        within each line of a file retrieved from the 
+        given filepath.
+        
+        The following method will loop through each file
+        matching the .sh extension and compare it to the
+        lintList to determine if a signature exists in a
+        source file.  If a signature is found in source 
+        then the line number and line of code will be 
+        sent to stdout and result in a response code (0).
+        
+        For issues found, a counter will increment to track
+        for reporting purposes per source file and for the
+        overall run of the script across multiple files.
+    
+    main()
+
+
+>>> 
+```
 
 ## Pipeline Integration
 
